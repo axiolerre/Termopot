@@ -5,9 +5,9 @@ export {
 }
 
 function get_zone_name(a: count): string {
-    if ( a == 1 ) return "WC";
-    if ( a == 3 ) return "Salle de conférence";
-    if ( a == 5 ) return "Accueil";
+    if ( a == 1025 ) return "WC";
+    if ( a == 1027 ) return "Salle de conférence";
+    if ( a == 1029 ) return "Accueil";
     return fmt("Registre inconnu (%d)", a);
 }
 

@@ -1,7 +1,7 @@
 services:
   # --- 1. LE CERVEAU (Automate V3) ---
   openplc:
-    build: ../OpenPLC_v3
+    build: ./OpenPLC_v3
     container_name: hvac_plc
     restart: always
     privileged: true

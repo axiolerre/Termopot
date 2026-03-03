@@ -3,7 +3,7 @@
 #empty_field	(empty)
 #unset_field	-
 #path	loaded_scripts
-#open	2026-03-03-15-24-52
+#open	2026-03-03-15-52-41
 #fields	name
 #types	string
 /usr/local/zeek/share/zeek/base/init-bare.zeek
@@ -545,3 +545,4 @@
   /usr/local/zeek/share/zeek/policy/frameworks/files/detect-MHR.zeek
   /usr/local/zeek/share/zeek/policy/frameworks/notice/extend-email/hostnames.zeek
   /usr/local/zeek/share/zeek/policy/frameworks/telemetry/log.zeek
+#close	2026-03-03-15-54-00

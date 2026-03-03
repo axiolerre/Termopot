@@ -3,13 +3,14 @@
 #empty_field	(empty)
 #unset_field	-
 #path	weird
-#open	2026-03-03-15-16-29
+#open	2026-03-03-15-52-48
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	name	addl	notice	peer	source
 #types	time	string	addr	port	addr	port	string	string	bool	string	string
-1772550989.336411	Czg6E438xy4Vnattd	172.18.0.1	57444	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
-1772550997.890165	CMdHoW1G7Wfjmn1Akb	172.18.0.1	33254	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
-1772550998.712132	CKPNl31Ir8cPGVKASf	172.18.0.1	33404	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
-1772550999.900335	CqfMYz2my1J4V1A9Vk	172.18.0.1	33526	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
-1772551004.387387	Cenjsx3ZKYPvIx2fc4	172.18.0.1	36722	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
-1772551007.509647	CAiOKs3VQxwmFRZgd5	172.18.0.1	36864	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
-#close	2026-03-03-15-17-41
+1772553168.541949	CUf3Us1frJyTqai9yc	172.18.0.1	39524	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
+1772553170.120964	CuXn361iqgRRoXhrl8	172.18.0.1	39672	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
+1772553171.085983	CPJ0Q84XOcV6yLZON9	172.18.0.1	39800	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
+1772553174.117738	CYZGj12MpqwqQDRA97	172.18.0.1	39922	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
+1772553182.578780	CwKmBd2EIgdjLe4o97	172.18.0.1	33146	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
+1772553185.737883	CAnDl04BFcI9Fb1rSk	172.18.0.1	47948	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
+1772553207.678061	CUOXut8QcYfqQUE5a	172.18.0.1	45456	172.18.0.3	8080	truncated_tcp_payload	-	F	zeek	TCP
+#close	2026-03-03-15-54-00
