@@ -1,0 +1,44 @@
+services:
+  # --- 1. LE CERVEAU (Automate V3) ---
+  openplc:
+    build: ../OpenPLC_v3
+    container_name: hvac_plc
+    restart: always
+    privileged: true
+    ports:
+      - "502:502"
+      - "8080:8080"
+    volumes:
+      # On mappe le dossier de persistance interne d'OpenPLC
+      - ./openplc_runtime:/docker_persistent
+    networks:
+      - ics_net
+
+ # --- 2. ZEEK (Correction du chemin de logs) ---
+  zeek:
+    image: zeek/zeek:latest
+    container_name: zeek_sniffer
+    restart: always
+    network_mode: service:openplc
+    # On ajoute -C pour les checksums et on lance le script
+    command: zeek -C -i eth0 base/protocols/modbus /sabotage.zeek local
+    volumes:
+      - ./zeek_logs:/zeek_capture  # On va dire à Zeek de travailler ici
+      - ./sabotage.zeek:/sabotage.zeek
+    working_dir: /zeek_capture     # <--- TRÈS IMPORTANT : force Zeek à écrire ici
+
+  # --- 3. NODE-RED (Reste inchangé) ---
+  nodered:
+    image: nodered/node-red:latest
+    container_name: hvac_scada
+    restart: always
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./node_red_data:/data
+    networks:
+      - ics_net
+
+networks:
+  ics_net:
+    driver: bridge

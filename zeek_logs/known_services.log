@@ -1,0 +1,11 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	known_services
+#open	2026-03-03-15-16-28
+#fields	ts	host	port_num	port_proto	service
+#types	time	addr	port	enum	set[string]
+1772550988.447849	172.18.0.3	8080	tcp	HTTP
+1772551014.509985	172.18.0.3	502	tcp	MODBUS
+#close	2026-03-03-15-17-41

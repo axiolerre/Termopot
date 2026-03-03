@@ -1,0 +1,748 @@
+[
+    {
+        "id": "6f3b1d048194aa4b",
+        "type": "tab",
+        "label": "HVAC V2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c79e9746ca18fb07",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ui_base",
+        "type": "ui-base",
+        "name": "GTB Convention Center",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 5,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "modbus_client_config",
+        "type": "modbus-client",
+        "name": "Connexion OpenPLC",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": false,
+        "tcpHost": "hvac_plc",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "54ac7aa283e4c16d",
+        "type": "ui-theme",
+        "name": "Theme Name",
+        "colors": {
+            "surface": "#2c3e50",
+            "primary": "#1e88e5",
+            "bgPage": "#e8e8e8",
+            "groupBg": "#ffffff",
+            "groupOutline": "#b0b0b0"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "10px",
+            "groupGap": "10px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "ui_page_hvac",
+        "type": "ui-page",
+        "name": "Climatisation Centre de Congrès",
+        "ui": "ui_base",
+        "path": "/hvac",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "54ac7aa283e4c16d",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "ui_group_controls",
+        "type": "ui-group",
+        "name": "Température WC",
+        "page": "ui_page_hvac",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "dca6d2b98f6c522f",
+        "type": "ui-group",
+        "name": "Température salle de conférence",
+        "page": "ui_page_hvac",
+        "width": 6,
+        "height": 1,
+        "order": -1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "edecdc82e753c882",
+        "type": "ui-group",
+        "name": "Température Accueil",
+        "page": "ui_page_hvac",
+        "width": 6,
+        "height": 1,
+        "order": -1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5a345e422244301c",
+        "type": "modbus-read",
+        "z": "6f3b1d048194aa4b",
+        "name": "Lire Température WC (%MW0)",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "1024",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "modbus_client_config",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "522fbc10a933a4ba"
+            ],
+            [
+                "6d9ae3fca38b3152"
+            ]
+        ]
+    },
+    {
+        "id": "522fbc10a933a4ba",
+        "type": "ui-gauge",
+        "z": "6f3b1d048194aa4b",
+        "name": "Jauge Température WC",
+        "group": "ui_group_controls",
+        "order": 1,
+        "value": "payload[0]",
+        "valueType": "jsonata",
+        "width": "0",
+        "height": "0",
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#1a5fb4",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "16",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#ff4d4d",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 50,
+        "sizeThickness": "",
+        "sizeGap": "",
+        "sizeKeyThickness": "32",
+        "className": "",
+        "x": 570,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "92cb4c0e240520ce",
+        "type": "ui-slider",
+        "z": "6f3b1d048194aa4b",
+        "group": "ui_group_controls",
+        "name": "Consigne WC",
+        "label": "Consigne (°C)",
+        "tooltip": "",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "outs": "all",
+        "topic": "responseTopic",
+        "topicType": "msg",
+        "showTicks": "false",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 160,
+        "y": 220,
+        "wires": [
+            [
+                "4b9df30a67c619b8",
+                "5304d93b57ab84f8"
+            ]
+        ]
+    },
+    {
+        "id": "5304d93b57ab84f8",
+        "type": "modbus-write",
+        "z": "6f3b1d048194aa4b",
+        "name": "Écrire Consigne WC (%MW1)",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "1025",
+        "quantity": "1",
+        "server": "modbus_client_config",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 570,
+        "y": 240,
+        "wires": [
+            [
+                "c220cfde54621357"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c220cfde54621357",
+        "type": "debug",
+        "z": "6f3b1d048194aa4b",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "6d9ae3fca38b3152",
+        "type": "debug",
+        "z": "6f3b1d048194aa4b",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4b9df30a67c619b8",
+        "type": "debug",
+        "z": "6f3b1d048194aa4b",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 180,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "fbad2dabb0e31b8d",
+        "type": "modbus-read",
+        "z": "6f3b1d048194aa4b",
+        "name": "Lire Température Conf (%MW2)",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "1026",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "modbus_client_config",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 650,
+        "y": 460,
+        "wires": [
+            [
+                "f7fed37844dd1a55"
+            ],
+            [
+                "1842ee01d5dd0f60"
+            ]
+        ]
+    },
+    {
+        "id": "f7fed37844dd1a55",
+        "type": "ui-gauge",
+        "z": "6f3b1d048194aa4b",
+        "name": "Jauge Température Conf",
+        "group": "dca6d2b98f6c522f",
+        "order": 1,
+        "value": "payload[0]",
+        "valueType": "jsonata",
+        "width": "0",
+        "height": "0",
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#1a5fb4",
+                "text": "",
+                "textType": "none"
+            },
+            {
+                "from": "16",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "none"
+            },
+            {
+                "from": "28",
+                "color": "#ff4d4d",
+                "text": "",
+                "textType": "none"
+            }
+        ],
+        "min": 0,
+        "max": 50,
+        "sizeThickness": "",
+        "sizeGap": "",
+        "sizeKeyThickness": "32",
+        "className": "",
+        "x": 1010,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f043d1903d430d85",
+        "type": "ui-slider",
+        "z": "6f3b1d048194aa4b",
+        "group": "dca6d2b98f6c522f",
+        "name": "Consigne Conf",
+        "label": "Consigne (°C)",
+        "tooltip": "",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "outs": "all",
+        "topic": "responseTopic",
+        "topicType": "msg",
+        "showTicks": "false",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 600,
+        "y": 540,
+        "wires": [
+            [
+                "e81d59bbf24669c1",
+                "dec4123f1e89892c"
+            ]
+        ]
+    },
+    {
+        "id": "dec4123f1e89892c",
+        "type": "modbus-write",
+        "z": "6f3b1d048194aa4b",
+        "name": "Écrire Consigne Conf (%MW3)",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "1027",
+        "quantity": "1",
+        "server": "modbus_client_config",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1010,
+        "y": 560,
+        "wires": [
+            [
+                "0dc25a3f86e3234d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0dc25a3f86e3234d",
+        "type": "debug",
+        "z": "6f3b1d048194aa4b",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "1842ee01d5dd0f60",
+        "type": "debug",
+        "z": "6f3b1d048194aa4b",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e81d59bbf24669c1",
+        "type": "debug",
+        "z": "6f3b1d048194aa4b",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "fbb8fd0a76177f3e",
+        "type": "modbus-read",
+        "z": "6f3b1d048194aa4b",
+        "name": "Lire Température Accueil (%MW4)",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "1028",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "modbus_client_config",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 740,
+        "y": 820,
+        "wires": [
+            [
+                "31ee7a22bb63dd66"
+            ],
+            [
+                "f87d55c5b84a087c"
+            ]
+        ]
+    },
+    {
+        "id": "31ee7a22bb63dd66",
+        "type": "ui-gauge",
+        "z": "6f3b1d048194aa4b",
+        "name": "Jauge Température Accueil",
+        "group": "edecdc82e753c882",
+        "order": 1,
+        "value": "payload[0]",
+        "valueType": "jsonata",
+        "width": "0",
+        "height": "0",
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "",
+        "alwaysShowTitle": false,
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#1a5fb4",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "16",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#ff4d4d",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 50,
+        "sizeThickness": "",
+        "sizeGap": "",
+        "sizeKeyThickness": "32",
+        "className": "",
+        "x": 1100,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c916d6cd15a1981",
+        "type": "ui-slider",
+        "z": "6f3b1d048194aa4b",
+        "group": "edecdc82e753c882",
+        "name": "Consigne Accueil",
+        "label": "Consigne (°C)",
+        "tooltip": "",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "outs": "all",
+        "topic": "responseTopic",
+        "topicType": "msg",
+        "showTicks": "false",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 690,
+        "y": 900,
+        "wires": [
+            [
+                "d71d1d4fe14b6b2c",
+                "60f548df48bd9186"
+            ]
+        ]
+    },
+    {
+        "id": "60f548df48bd9186",
+        "type": "modbus-write",
+        "z": "6f3b1d048194aa4b",
+        "name": "Écrire Consigne Accueil (%MW5)",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "1029",
+        "quantity": "1",
+        "server": "modbus_client_config",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1100,
+        "y": 920,
+        "wires": [
+            [
+                "d210bf17d38acb57"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d210bf17d38acb57",
+        "type": "debug",
+        "z": "6f3b1d048194aa4b",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "f87d55c5b84a087c",
+        "type": "debug",
+        "z": "6f3b1d048194aa4b",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "d71d1d4fe14b6b2c",
+        "type": "debug",
+        "z": "6f3b1d048194aa4b",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 1100,
+        "wires": []
+    }
+]

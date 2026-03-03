@@ -1,0 +1,46 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	dns
+#open	2026-03-03-15-24-52
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	trans_id	rtt	query	qclass	qclass_name	qtype	qtype_name	rcode	rcode_name	AA	TC	RD	RA	Z	answers	TTLs	rejected	opcode	opcode_name
+#types	time	string	addr	port	addr	port	enum	count	interval	string	count	string	count	string	count	string	bool	bool	bool	bool	count	vector[string]	vector[interval]	bool	count	string
+1772551492.469292	CPZp0ykUOWq1ETtJa	172.18.0.1	5353	224.0.0.251	5353	udp	0	0.516762	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	0	NOERROR	T	F	F	F	0	172.18.0.1	120.000000	F	0	query
+1772551492.986005	CPZp0ykUOWq1ETtJa	172.18.0.1	5353	224.0.0.251	5353	udp	0	0.299426	honey-standard-pc-q35-ich9-2009.local	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local	120.000000	F	0	query
+1772551493.236217	CPZp0ykUOWq1ETtJa	172.18.0.1	5353	224.0.0.251	5353	udp	0	0.250901	honey-standard-pc-q35-ich9-2009.local	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	172.18.0.1	120.000000	F	0	query
+1772551493.487066	CPZp0ykUOWq1ETtJa	172.18.0.1	5353	224.0.0.251	5353	udp	0	0.200900	honey-standard-pc-q35-ich9-2009.local	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local,fe80::b4fd:51ff:fe53:3923	120.000000,120.000000	F	0	query
+1772551492.953867	CI4Y5l15vtUDYLnKfj	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	0.734137	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local,fe80::b4fd:51ff:fe53:3923	120.000000,120.000000	F	0	query
+1772551493.017233	CXC8S52wa3vA0cNw0h	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	0.734061	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local,fe80::60f6:6fff:feae:3ea5	120.000000,120.000000	F	0	query
+1772551494.470017	CPZp0ykUOWq1ETtJa	172.18.0.1	5353	224.0.0.251	5353	udp	0	0.300695	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local,fe80::b4fd:51ff:fe53:3923	120.000000,120.000000	F	0	query
+1772551492.985975	CI4Y5l15vtUDYLnKfj	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	1.784785	honey-standard-pc-q35-ich9-2009.local	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local,fe80::b4fd:51ff:fe53:3923	120.000000,120.000000	F	0	query
+1772551493.049349	CXC8S52wa3vA0cNw0h	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	1.784678	honey-standard-pc-q35-ich9-2009.local	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local,fe80::60f6:6fff:feae:3ea5	120.000000,120.000000	F	0	query
+1772551493.236190	CI4Y5l15vtUDYLnKfj	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	3.617234	honey-standard-pc-q35-ich9-2009.local	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local,fe80::b4fd:51ff:fe53:3923	120.000000,120.000000	F	0	query
+1772551493.299501	CXC8S52wa3vA0cNw0h	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	3.617210	honey-standard-pc-q35-ich9-2009.local	1	C_INTERNET	255	*	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local,fe80::60f6:6fff:feae:3ea5	120.000000,120.000000	F	0	query
+1772551495.367930	CPZp0ykUOWq1ETtJa	172.18.0.1	5353	224.0.0.251	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local,172.18.0.1	120.000000,120.000000	F	0	query
+1772551496.853380	CPZp0ykUOWq1ETtJa	172.18.0.1	5353	224.0.0.251	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	0	NOERROR	T	F	F	F	0	honey-standard-pc-q35-ich9-2009.local,fe80::b4fd:51ff:fe53:3923	120.000000,120.000000	F	0	query
+1772551493.487041	CI4Y5l15vtUDYLnKfj	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	-	honey-standard-pc-q35-ich9-2009.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F	0	query
+1772551493.954148	CI4Y5l15vtUDYLnKfj	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551495.954846	CI4Y5l15vtUDYLnKfj	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551499.955958	CI4Y5l15vtUDYLnKfj	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551507.958037	CI4Y5l15vtUDYLnKfj	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551493.550301	CXC8S52wa3vA0cNw0h	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	-	honey-standard-pc-q35-ich9-2009.local	1	C_INTERNET	255	*	-	-	F	F	F	F	0	-	-	F	0	query
+1772551494.017438	CXC8S52wa3vA0cNw0h	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551496.018013	CXC8S52wa3vA0cNw0h	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551500.019162	CXC8S52wa3vA0cNw0h	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551508.021173	CXC8S52wa3vA0cNw0h	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551522.487732	C7YzHo4pu36nkes3Rf	172.18.0.1	5353	224.0.0.251	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551523.959558	CY15BF2uyPrkIiIh56	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551524.020706	CpBdcY3cFhuK68Uogk	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551554.517771	Cep3PA1StwiMn2xaa1	172.18.0.1	5353	224.0.0.251	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551555.960827	CVtxn63gcXZJH6yHK5	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551556.020997	CKcDFt4kbcQWmGt4mj	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551618.518787	Ckuh3i3KyvjQxvvf0f	172.18.0.1	5353	224.0.0.251	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551619.961218	C3tPuUOLa06YG8ON2	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551620.021354	CdTyoq3eU5EglaW6qj	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551746.608735	CnLHVx2XCGsogaVvGk	172.18.0.1	5353	224.0.0.251	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551747.962862	CtXTXi1aAbKRqI88kh	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772551748.022075	CZvw1h21ea4xEGOn7i	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772552002.638791	CdxdimgIM8DYhFWt4	172.18.0.1	5353	224.0.0.251	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772552003.963820	CbjHxT2WyEoXkpmBKb	fe80::b4fd:51ff:fe53:3923	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
+1772552004.022974	C8jp8X738R27dAuj4	fe80::60f6:6fff:feae:3ea5	5353	ff02::fb	5353	udp	0	-	_afpovertcp._tcp.local	1	C_INTERNET	12	PTR	-	-	F	F	F	F	0	-	-	F	0	query
